@@ -1,0 +1,248 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Roboto", sans-serif;
+}
+
+body {
+	height: 100vh;
+	/* background-image: linear-gradient(to top left, #27272a 0%, #1e293b 100%); */
+	background-image: linear-gradient(to bottom right, #1d2225, #0e0e0f);
+
+	overflow: hidden;
+}
+
+h1 {
+	font-size: 5rem;
+	text-align: center;
+	margin-top: 1rem;
+	margin-bottom: 5rem;
+	margin-left: auto;
+	margin-right: auto;
+	color: #fafaf9;
+	padding: 2rem;
+	text-decoration: 2px underline red;
+	text-underline-offset: 1rem;
+
+	/* don't forget to set a duration! */
+}
+
+.animate__animated.animate__backInDown {
+	--animate-duration: 2s;
+}
+
+.animate__animated.animate__fadeInUpBig {
+	--animate-duration: 1s;
+}
+
+.flex--container {
+	display: flex;
+	justify-content: center;
+	padding-left: 2rem;
+	padding-right: 2rem;
+	/* margin-top: 8rem; */
+}
+
+.board--container {
+	display: grid;
+	grid-template-columns: repeat(3, 12rem);
+	grid-template-rows: repeat(3, 12rem);
+	cursor: pointer;
+}
+
+.hidden {
+	display: none;
+}
+
+.cell {
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	font-size: 10rem;
+	color: #fafaf9;
+	transition: 0.2s;
+}
+
+.cell:hover {
+	background-color: #334155;
+}
+
+.cell-one,
+.cell-four,
+.cell-seven {
+	border-left: 0.3rem solid whitesmoke;
+	border-right: 0.3rem solid whitesmoke;
+}
+
+.cell-three,
+.cell-four,
+.cell-five {
+	border-top: 0.3rem solid whitesmoke;
+	border-bottom: 0.3rem solid whitesmoke;
+}
+
+.playerTurn {
+	font-size: 2rem;
+	color: #fafaf9;
+	text-align: center;
+	margin-top: 4rem;
+}
+
+.reset {
+	display: flex;
+	justify-content: center;
+}
+
+.btn {
+	margin-top: 1rem;
+	text-align: center;
+	font-size: 1.5rem;
+	padding: 0.5rem 1rem;
+	transition-duration: 1s;
+}
+
+@media (max-width: 480px) {
+	.body {
+		overflow: hidden;
+	}
+
+	.h1 {
+		font-size: 0.8rem;
+		text-align: center;
+		margin-top: 0.3rem;
+		margin-bottom: 1rem;
+		color: #fafaf9;
+		padding: 1rem;
+	}
+	.board--container {
+		display: grid;
+		grid-template-columns: repeat(3, 6rem);
+		grid-template-rows: repeat(3, 6rem);
+		cursor: pointer;
+	}
+
+	.cell {
+		justify-content: center;
+		align-items: center;
+		display: flex;
+		font-size: 5rem;
+		color: #fafaf9;
+		transition: 0.2s;
+	}
+
+	.playerTurn {
+		margin-top: 3rem;
+		font-size: 1.8rem;
+	}
+}
+
+@media (max-width: 420px) {
+	.animate__animated.animate__backInDown {
+		font-size: 4.5rem;
+		text-align: center;
+		margin-top: 1rem;
+		margin-bottom: 7rem;
+		padding: 0.4rem;
+	}
+
+	.board--container {
+		display: grid;
+		grid-template-columns: repeat(3, 5.7rem);
+		grid-template-rows: repeat(3, 5.7rem);
+		cursor: pointer;
+	}
+
+	.cell {
+		justify-content: center;
+		align-items: center;
+		display: flex;
+		font-size: 3rem;
+		color: #fafaf9;
+		transition: 0.2s;
+	}
+
+	.playerTurn {
+		font-size: 1.5rem;
+		margin-top: 7rem;
+	}
+}
+
+@media (max-width: 380px) {
+	html,
+	body {
+		max-height: fit-content;
+		overflow-x: hidden;
+	}
+	body {
+		position: relative;
+	}
+
+	.animate__animated.animate__backInDown {
+		font-size: 4rem;
+		text-align: center;
+		margin-top: 1rem;
+		margin-bottom: 7rem;
+		padding: 0.3rem;
+	}
+
+	.board--container {
+		display: grid;
+		grid-template-columns: repeat(3, 5.5rem);
+		grid-template-rows: repeat(3, 5.5rem);
+		cursor: pointer;
+	}
+
+	.cell {
+		justify-content: center;
+		align-items: center;
+		display: flex;
+		font-size: 3rem;
+		color: #fafaf9;
+		transition: 0.2s;
+	}
+
+	.playerTurn {
+		font-size: 1.4rem;
+		margin-top: 5rem;
+	}
+}
+
+@media (max-width: 320px) {
+	.animate__animated.animate__backInDown {
+		font-size: 3rem;
+		text-align: center;
+		margin-top: 1rem;
+		margin-bottom: 7rem;
+		padding: 0.3rem;
+	}
+
+	.board--container {
+		display: grid;
+		grid-template-columns: repeat(3, 4.5rem);
+		grid-template-rows: repeat(3, 4.5rem);
+		cursor: pointer;
+	}
+
+	.cell {
+		justify-content: center;
+		align-items: center;
+		display: flex;
+		font-size: 3rem;
+		color: #fafaf9;
+		transition: 0.2s;
+	}
+
+	.playerTurn {
+		font-size: 1.2rem;
+		margin-top: 4rem;
+	}
+
+	.btn {
+		/* margin-top: 1rem; */
+		text-align: center;
+		font-size: 1rem;
+		padding: 0.5rem 1rem;
+		transition-duration: 1s;
+	}
+}
