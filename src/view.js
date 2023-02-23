@@ -1,18 +1,13 @@
 import * as controller from "./controller.js";
 import "animate.css";
 
-// export con
-//! DOM rendering functions //
-export const removeAnimationClass = function () {
-	for (let i = 0; i < 9; i++) {
+export const clearOpeningAnimation = () =>
+	controller.boardArr().forEach((cell) => {
 		setTimeout(() => {
-			document
-				.getElementById(i)
-				.classList.remove("animate__animated", "animate__rollIn");
+			cell.classList.remove("animate__animated", "animate__rollIn");
 			addPlayerTurnText();
-		}, 1500);
-	}
-};
+		}, 1250);
+	});
 
 export const addPlayerTurnText = function () {
 	const player = document.querySelector(".playerTurn");
@@ -22,44 +17,17 @@ export const addPlayerTurnText = function () {
 
 export const openingAnimation = function (board) {
 	const boardEl = document.querySelector(".board--container");
+	boardEl.classList.remove("hidden");
 
-	for (let i = 0; i < 9; i++) {
-		setTimeout(() => {
-			boardEl.classList.remove("hidden");
-			document
-				.getElementById(i)
-				.classList.add("animate__animated", "animate__rollIn");
-		});
-	}
-	removeAnimationClass(board);
-};
+	controller
+		.boardArr()
+		.forEach((cell) =>
+			cell.classList.add("animate__animated", "animate__rollIn")
+		);
 
-export const displayWinningMessage = function (
-	humanPlayer,
-	gameActive,
-	winArr
-) {
-	// if (gameActive) return;
-	console.log(`human player ->${humanPlayer} : game finished -> ${gameActive}`);
-	humanPlayer
-		? (document.querySelector(".playerTurn").textContent = "X Wins the game!")
-		: (document.querySelector(".playerTurn").textContent = "O Wins the game!");
-
-	for (let i = 0; i < winArr.length; i++) {
-		document
-			.getElementById(winArr[i])
-			.classList.remove("animate__animated", "animate__heartBeat");
-		document
-			.getElementById(winArr[i])
-			.classList.add("animate__animated", "animate__flash");
-	}
-
-	// if (!gameActive)
 	setTimeout(() => {
-		renderGameOverAnimation();
-	}, 1500);
-
-	return;
+		clearOpeningAnimation();
+	});
 };
 
 //* Clear animation classes from game board //

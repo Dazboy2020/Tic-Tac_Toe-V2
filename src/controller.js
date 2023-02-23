@@ -2,6 +2,9 @@ import * as view from "./view.js";
 import "animate.css";
 let bounceInUp = false;
 
+export const boardArr = () =>
+	Array.from(document.getElementsByClassName("cell"));
+
 view.openingAnimation();
 
 export const winningCombinations = [
@@ -18,7 +21,6 @@ export const winningCombinations = [
 export const PLAYER1_MARKER = "X";
 export const PLAYER2_MARKER = "O";
 const gameBoard = ["", "", "", "", "", "", "", "", ""];
-const boardArr = () => Array.from(document.getElementsByClassName("cell"));
 const cellNumID = (cellEl) => cellEl.id;
 const emptyCells = () => boardArr().filter((cellEl) => cellEl.innerText === "");
 
