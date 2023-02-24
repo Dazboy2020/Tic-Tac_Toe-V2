@@ -24,7 +24,7 @@ const gameBoard = ["", "", "", "", "", "", "", "", ""];
 const cellNumID = (cellEl) => cellEl.id;
 const emptyCells = () => boardArr().filter((cellEl) => cellEl.innerText === "");
 
-//! Opponnent color & animation class //
+//! Player O color & animation class //
 const markerO = (computerSelection) => {
 	document.getElementById(computerSelection).style.color = "#fafaf9";
 
@@ -33,7 +33,7 @@ const markerO = (computerSelection) => {
 		.classList.add("animate__animated", "animate__heartBeat");
 };
 
-//! Player 1 color and animation class //
+//! Player X color and animation class //
 const markerColourX = (playerSelection) => {
 	document
 		.getElementById(playerSelection)
@@ -115,8 +115,8 @@ const playerO_Turn = () => {
 	disableListeners();
 	const computerSelection = opponentChoice();
 	setTimeout(() => {
-		markerO(computerSelection);
 		takeTurn(computerSelection, PLAYER2_MARKER);
+		markerO(computerSelection);
 		gameBoard.pop();
 
 		if (!checkWinner() || !draw()) enableListeners();
@@ -130,8 +130,8 @@ const clickFn = (e) => {
 	const check = document.getElementById(e.target.id).textContent;
 	if (check !== "") return;
 
-	markerColourX(playerSelection);
 	takeTurn(playerSelection, PLAYER1_MARKER);
+	markerColourX(playerSelection);
 	gameBoard.pop();
 	if (gameBoard.length === 0 && !checkWinner()) return renderDrawAnimation();
 	if (!checkWinner() || !draw()) return playerO_Turn();

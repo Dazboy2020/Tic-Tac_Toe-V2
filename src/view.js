@@ -15,7 +15,7 @@ export const addPlayerTurnText = function () {
 	player.classList.add("animate__animated", "animate__bounceInUp");
 };
 
-export const openingAnimation = function (board) {
+export const openingAnimation = function () {
 	const boardEl = document.querySelector(".board--container");
 	boardEl.classList.remove("hidden");
 
@@ -32,10 +32,10 @@ export const openingAnimation = function (board) {
 
 //* Clear animation classes from game board //
 export const resetCellAnimation = () => {
-	for (let i = 0; i < 9; i++) {
-		document
-			.getElementById(i)
-			.classList.remove("animate__animated", "animate__heartBeat");
-		document.getElementById(i).textContent = "";
-	}
+	controller
+		.boardArr()
+		.forEach((cell) =>
+			cell.classList.remove("animate__animated", "animate__heartBeat")
+		);
+	controller.boardArr().forEach((cell) => (cell.textContent = ""));
 };
