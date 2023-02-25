@@ -1,5 +1,5 @@
 import * as view from "./view.js";
-import "animate.css";
+// import "animate.css";
 let bounceInUp = false;
 
 export const boardArr = () =>
