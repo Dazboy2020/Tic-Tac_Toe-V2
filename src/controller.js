@@ -1,5 +1,4 @@
 import * as view from "./view.js";
-// import "animate.css";
 let bounceInUp = false;
 
 export const boardArr = () =>
@@ -125,7 +124,7 @@ const playerO_Turn = () => {
 
 //! ClickFn
 const clickFn = (e) => {
-	playerSelection = e.target.id;
+	const playerSelection = e.target.id;
 
 	const check = document.getElementById(e.target.id).textContent;
 	if (check !== "") return;
