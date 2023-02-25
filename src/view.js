@@ -1,5 +1,4 @@
 import * as controller from "./controller.js";
-import "animate.css";
 
 export const clearOpeningAnimation = () =>
 	controller.boardArr().forEach((cell) => {
