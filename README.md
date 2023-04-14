@@ -2,6 +2,6 @@
 
 Tic-Tac-Toe Javascript Game V1.
 
-[Live demo](https://adorable-kringle-ea5346.netlify.app/)
+[Live demo](https://tic-tac-toe-final-2023.netlify.app/)
 
-![screenshot](https://i.ibb.co/QH57SqX/tictactoe.png)
+![screenshot](https://i.ibb.co/LYN9B6S/1681474115.png)
