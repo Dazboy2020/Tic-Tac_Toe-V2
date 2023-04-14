@@ -184,7 +184,6 @@ export const renderResetButton = () => {
 
 const resetButton = document.querySelector('.btn');
 resetButton.addEventListener('click', (e) => {
-	console.log('clicked');
 	bounceInUp = true;
 	removeResetButton();
 	resetAnimation();
