@@ -122,7 +122,7 @@ const playerO_Turn = () => {
 	}, 350);
 };
 
-//! ClickFn
+//! ClickFn //
 const clickFn = (e) => {
 	const playerSelection = e.target.id;
 
